@@ -1,5 +1,6 @@
 import React from 'react';
 import ToDoList from '../components/ToDoList'
+import '../styles/ToDoPage.css'
 
 const ToDoPage = () => {
   const TODOITEMS = [
@@ -25,7 +26,7 @@ const ToDoPage = () => {
 
   return (
     <div>
-      <h2>To Do Page</h2> 
+      <h1 className="ToDoPageTitle">To Do Page</h1> 
       <ToDoList toDoItems={TODOITEMS}/>
     </div>
   )
