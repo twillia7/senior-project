@@ -1,3 +1,6 @@
-.displayFlex {
-  display: flex;
+.listContainer {
+  background-color: gray;
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
 }

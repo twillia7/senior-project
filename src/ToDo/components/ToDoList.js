@@ -1,25 +1,26 @@
 import React from 'react';
 import ToDoItem from './ToDoItem'
+import '../../shared/styles/sharedStyles.css'
 import '../styles/ToDoList.css'
 
 const ToDoList = (props) => {
+  console.log("PROPS: ", props)
   return (
-    <div>
-      {props.toDoItems.length === 0 
-        ? <h2>You are all caught up!</h2>
-        : <div>
-            <h2>{props.toDoItems.length} {props.toDoItems.length === 1 ? 'Task' : 'Tasks'}</h2>
-            {props.toDoItems.map(toDoItem => (
-              <div className="displayFlex" key={`${toDoItem.id}-TDL-container`}>
-                <div key={`${toDoItem.id}-TDL-button`}>Button</div>
-                <ToDoItem 
-                  key={`${toDoItem.id}-TDL-item`}
-                  id={toDoItem.id} 
-                  title={toDoItem.title} /> 
-              </div>
-            ))}
-          </div>
-      }
+    <div className="listContainer">
+      {props.toDoItems.map(toDoItem => (
+        <div className="displayFlex" key={`${toDoItem.id}-TDL-container`}>
+          <input
+            key={`${toDoItem.id}-TDL-check`}
+            type="checkbox"
+            defaultChecked={toDoItem.isComplete}
+            onClick={() => props.handleCheckboxClick(toDoItem.id)}
+          />
+          <ToDoItem 
+            key={`${toDoItem.id}-TDL-item`}
+            id={toDoItem.id} 
+            title={toDoItem.title} /> 
+        </div>
+      ))}
     </div>
   )
 }
