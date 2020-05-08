@@ -1,9 +1,10 @@
 import React from 'react';
+import '../styles/ToDoItem.css'
 
 const ToDoItem = (props) => {
   
   return (
-    <div>
+    <div className="toDoItem">
       <p>{props.title}</p> 
       <p>{props.id}</p>
     </div>

@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState } from 'react';
 import ToDoList from '../components/ToDoList'
 import '../../shared/styles/sharedStyles.css'
 import '../styles/ToDoPage.css'
@@ -10,6 +10,7 @@ const ToDoPage = () => {
       notes: 'Hello World, I am a note on a ToDo Item', 
       hasDueDate: true, 
       dueDate: Date.now(),
+      priority: 1,
       isComplete: true
     },
     { id: 'TEST_02', 
@@ -17,6 +18,7 @@ const ToDoPage = () => {
       notes: 'Hello World, I am a note on a ToDo Item', 
       hasDueDate: true, 
       dueDate: Date.now(),
+      priority: 2,
       isComplete: false
     },
     { id: 'TEST_03', 
@@ -24,6 +26,7 @@ const ToDoPage = () => {
       notes: 'Hello World, I am a note on a ToDo Item', 
       hasDueDate: false, 
       dueDate: Date.now(),
+      priority: 3,
       isComplete: false
     },
   ]);
@@ -32,7 +35,7 @@ const ToDoPage = () => {
 
   const handleCheckboxClick = (itemId) => {
     const itemIndex = toDoItems.findIndex(item => {
-      if (item.id === itemId) return item
+      return item.id === itemId
     })
     const newToDoItems = toDoItems.slice()
     newToDoItems[itemIndex].isComplete = !newToDoItems[itemIndex].isComplete;
@@ -41,11 +44,21 @@ const ToDoPage = () => {
 
   return (
     <div>
-      <div className="toDoHeaderContainer displayFlex spaceBetween directionRow">
-        <h1>To Do</h1>
-        <h1>{toDoItems.length}</h1>
+      <div className="addToDoButtonContainer displayFlex justifyFlexEnd">
+        <button className="addToDoButton">+</button>
       </div>
-      <ToDoList toDoItems={toDoItems} handleCheckboxClick={handleCheckboxClick}/>
+      <div className="toDoHeaderContainer displayFlex spaceBetween">
+        <h1 className="toDoHeaderItem">To Do</h1>
+        <h1 className="toDoCount toDoHeaderItem">{toDoItems.length}</h1>
+      </div>
+      <div>
+        {toDoItems.length > 0 &&
+          <ToDoList toDoItems={toDoItems} handleCheckboxClick={handleCheckboxClick}/>
+        }
+        {toDoItems.length === 0 && 
+          <div className="emptyMessage">All Items Completed</div>
+        }
+      </div>
     </div>
   )
 }
