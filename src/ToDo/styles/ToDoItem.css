@@ -7,3 +7,12 @@
   width: 100%;
   border-bottom: lightgray 1px solid;
 }
+
+.toDoItemTitle {
+  font-weight: bold;
+  font-size: 24px;;
+}
+
+.toDoItemNotes {
+  color: #4A4A4A
+}

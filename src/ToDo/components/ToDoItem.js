@@ -17,8 +17,8 @@ const ToDoItem = (props) => {
         <span className="checkmark"></span>
       </label>
       <div className="toDoItemData">
-        <p>{props.toDoItem.title}</p> 
-        <p>{props.toDoItem.id}</p>
+        <p className="toDoItemTitle">{props.toDoItem.title}</p> 
+        <p className="toDoItemNotes">{props.toDoItem.notes}</p>
       </div>
     </div>
   )

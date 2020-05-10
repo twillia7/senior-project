@@ -26,8 +26,8 @@
 .toDoHeaderContainer {
   width: 100%;
   max-width: 500px;
+  padding-bottom: 15px;
   margin: auto;
-  border-bottom: lightgray 2px solid;
   height: 50px;
 }
 
