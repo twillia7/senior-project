@@ -44,9 +44,6 @@ const ToDoPage = () => {
 
   return (
     <div>
-      <div className="addToDoButtonContainer displayFlex justifyFlexEnd">
-        <button className="addToDoButton">+</button>
-      </div>
       <div className="toDoHeaderContainer displayFlex spaceBetween">
         <h1 className="toDoHeaderItem">To Do</h1>
         <h1 className="toDoCount toDoHeaderItem">{toDoItems.length}</h1>
@@ -58,6 +55,9 @@ const ToDoPage = () => {
         {toDoItems.length === 0 && 
           <div className="emptyMessage">All Items Completed</div>
         }
+      </div>
+      <div className="addToDoButtonContainer displayFlex justifyFlexEnd">
+        <button className="addToDoButton">+</button>
       </div>
     </div>
   )
