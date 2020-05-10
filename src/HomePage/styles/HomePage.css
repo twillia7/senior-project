@@ -1,0 +1,22 @@
+.homePageContainer {
+  width: 100%;
+}
+
+.homePageHeader {
+  font-size: 72px;
+  text-align: center;
+}
+
+.homePageDescription {
+  width: 100%;
+  text-align: center;
+  max-width: 1000px;
+  margin: 55px auto;
+  font-size: 32px;
+}
+
+.homePageExamples {
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+}
