@@ -1,7 +1,6 @@
 import React from 'react';
 import ToDoItem from './ToDoItem'
 import '../../shared/styles/sharedStyles.css'
-import '../styles/ToDoCheckbox.css'
 import '../styles/ToDoList.css'
 
 const ToDoList = (props) => {
@@ -9,21 +8,11 @@ const ToDoList = (props) => {
   return (
     <div className="listContainer">
       {props.toDoItems.map(toDoItem => (
-        <div className="displayFlex toDoItemContainer" key={`${toDoItem.id}-TDL-container`}>
-          <label className="container">
-            <input
-              className="toDoCheckbox"
-              key={`${toDoItem.id}-TDL-check`}
-              type="checkbox"
-              defaultChecked={toDoItem.isComplete}
-              onClick={() => props.handleCheckboxClick(toDoItem.id)}
-            />
-            <span className="checkmark"></span>
-          </label>
+        <div key={`${toDoItem.id}-TDL-container`}>
           <ToDoItem 
             key={`${toDoItem.id}-TDL-item`}
-            id={toDoItem.id} 
-            title={toDoItem.title} /> 
+            toDoItem={toDoItem}
+            handleCheckboxClick={props.handleCheckboxClick} /> 
         </div>
       ))}
     </div>

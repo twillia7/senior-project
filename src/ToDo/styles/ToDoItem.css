@@ -1,4 +1,9 @@
 .toDoItem {
+  height: 60px;
   width: 100%;
-  border-bottom: lightgray 2px solid;
+}
+
+.toDoItemData {
+  width: 100%;
+  border-bottom: lightgray 1px solid;
 }

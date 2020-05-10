@@ -65,3 +65,7 @@
 	border-radius: 50%;
 	background: #006aff;
 }
+
+.toDoCheckbox {
+  visibility: hidden;
+}

@@ -3,6 +3,11 @@
 
 * {
   font-family:'Open Sans';
+  margin: 0;
+}
+
+main {
+  margin-top: 25px;
 }
 
 /* Page should fill the entire height of the window */
