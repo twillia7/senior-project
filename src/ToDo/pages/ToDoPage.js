@@ -43,7 +43,7 @@ const ToDoPage = () => {
   }
 
   return (
-    <div>
+    <div className="toDoMainContainer">
       <div className="toDoHeaderContainer displayFlex spaceBetween">
         <h1 className="toDoHeaderItem">To Do</h1>
         <h1 className="toDoCount toDoHeaderItem">{toDoItems.length}</h1>

@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;400&display=swap');
 
+.toDoMainContainer {
+  padding-top: 25px;
+}
+
 .addToDoButtonContainer {
   width: 100%;
   max-width: 500px;

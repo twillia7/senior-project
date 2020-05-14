@@ -59,7 +59,7 @@
 /* Style the indicator (dot/circle) */
 .container .checkmark:after {
  	top: 5px;
-	left: 5px;
+	left: 6px;
 	width: 15px;
 	height: 15px;
 	border-radius: 50%;
