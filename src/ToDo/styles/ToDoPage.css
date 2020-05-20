@@ -9,6 +9,9 @@
 
 .toDoLeft, .toDoRight {
   width: 50%;
+}
+
+.toDoRight {
   text-align: center;
 }
 

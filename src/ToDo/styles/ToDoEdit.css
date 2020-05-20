@@ -1,0 +1,66 @@
+.toDoEditInput {
+  width: 60%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid gray;
+  outline: none;
+  margin: 10px 0;
+}
+
+.toDoEditTitle {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.toDoEditNotes {
+  font-size: 18px;
+}
+
+.toDoEditButtonContainer{
+  display: flex;
+  justify-content: center;
+}
+
+.toDoEditSave, .toDoEditCancel, .toDoEditDelete {
+  padding: 5px 20px;
+}
+
+.toDoEditSave, .toDoEditCancel {
+  width: auto;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: white;
+  color: black;
+  border: 1px solid gray;
+  border-radius: 8px;
+  text-decoration: none;
+  margin: 5px;
+}
+.toDoEditSave:active, .toDoEditCancel:active {
+  background-color: rgb(91, 91, 91);
+  color: white;
+}
+.toDoEditSave:focus, .toDoEditCancel:focus {
+  outline: none;
+}
+
+.toDoEditDelete {
+  width: auto;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: rgb(222, 0, 0);
+  color: white;
+  border: 1px solid gray;
+  border-radius: 8px;
+  text-decoration: none;
+  margin: 5px;
+}
+.toDoEditDelete:active {
+  background-color: white;
+  color: black;
+}
+.toDoEditDelete:focus {
+  outline: none;
+}

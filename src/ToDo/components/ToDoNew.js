@@ -20,11 +20,27 @@ const ToDoNew = (props) => {
         
         addItem(item)
 				setItem(initialFormState)
-			}}
+      }}
+      autoComplete="off"
 		>
-      <input type="text" name="title" value={item.title} onChange={handleInputChange} placeholder="Title" />
-      <input type="text" name="notes" value={item.notes} onChange={handleInputChange} placeholder="Notes" />
-			<button type="submit">Save</button>
+      <input 
+        className="toDoNewInput toDoNewTitle" 
+        type="text" 
+        name="title" 
+        value={item.title} 
+        onChange={handleInputChange} 
+        placeholder="Title" 
+        autoComplete="off"/>
+      <input 
+        className="toDoNewInput toDoNewNotes" 
+        type="text" 
+        name="notes" 
+        value={item.notes} 
+        onChange={handleInputChange} 
+        placeholder="Notes" 
+        autoComplete="off"/>
+      <br/>
+			<button type="submit" className="toDoNewSave">Save</button>
 		</form>
   )
 }
