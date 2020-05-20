@@ -3,22 +3,23 @@ import '../styles/ToDoItem.css'
 import '../styles/ToDoCheckbox.css'
 
 const ToDoItem = (props) => {
+  const {toDoItem, handleCheckboxClick, editItem } = props;
   
   return (
     <div className="toDoItem displayFlex">
       <label className="container">
         <input
           className="toDoCheckbox"
-          key={`${props.toDoItem.id}-TDL-check`}
+          key={`${toDoItem.id}-TDL-check`}
           type="checkbox"
-          defaultChecked={props.toDoItem.isComplete}
-          onClick={() => props.handleCheckboxClick(props.toDoItem.id)}
+          defaultChecked={toDoItem.isComplete}
+          onClick={() => handleCheckboxClick(props.toDoItem.id)}
         />
         <span className="checkmark"></span>
       </label>
-      <div className="toDoItemData">
-        <p className="toDoItemTitle">{props.toDoItem.title}</p> 
-        <p className="toDoItemNotes">{props.toDoItem.notes}</p>
+      <div className="toDoItemData" onClick={() => editItem(toDoItem)}>
+        <p className="toDoItemTitle">{toDoItem.title}</p> 
+        <p className="toDoItemNotes">{toDoItem.notes}</p>
       </div>
     </div>
   )

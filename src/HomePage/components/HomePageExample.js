@@ -8,14 +8,14 @@ const HomePageExample = (props) => {
         <div className="homePageExampleTextContainerRight">
           <p className="homePageExampleText">{props.exampleText}</p>
         </div>
-        <img src={props.src} className="homePageImage"></img>
+        <img alt={`Src: ${props.src}`} src={props.src} className="homePageImage"></img>
       </div>
     )
   }
   return (
     <div className="homePageExampleRow">
       <div className="homePageExampleImageContainer">
-        <img src={props.src} className="homePageImage"></img>
+        <img alt={`Src: ${props.src}`} src={props.src} className="homePageImage"></img>
       </div>
       <div className="homePageExampleTextContainerLeft">
         <p className="homePageExampleText">{props.exampleText}</p>

@@ -1,9 +1,9 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 import '../styles/Header.css'
 
-const Header = (props) => {
+const Header = () => {
   return (
     <header className="headerContainer">
       <h1><NavLink to="/" className="headerLink" activeClassName="selectedLink" exact>Home</NavLink></h1>

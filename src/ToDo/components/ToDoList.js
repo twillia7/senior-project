@@ -4,15 +4,17 @@ import '../../shared/styles/sharedStyles.css'
 import '../styles/ToDoList.css'
 
 const ToDoList = (props) => {
-  console.log("PROPS: ", props)
+  const { toDoItems, handleCheckboxClick, editItem } = props
+
   return (
     <div className="listContainer">
-      {props.toDoItems.map(toDoItem => (
+      {toDoItems.map(toDoItem => (
         <div key={`${toDoItem.id}-TDL-container`}>
           <ToDoItem 
             key={`${toDoItem.id}-TDL-item`}
             toDoItem={toDoItem}
-            handleCheckboxClick={props.handleCheckboxClick} /> 
+            handleCheckboxClick={handleCheckboxClick}
+            editItem={editItem}/> 
         </div>
       ))}
     </div>
