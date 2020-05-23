@@ -9,7 +9,7 @@ const ToDoEdit = (props) => {
     () => {
       setItem(currentItem)
     },
-    [ props ]
+    [ currentItem ]
   )
 
   const handleInputChange = event => {

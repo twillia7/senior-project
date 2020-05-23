@@ -60,12 +60,20 @@ const ToDoPage = () => {
     setToDoItems(newToDoItems)
   }
 
+  const getItemCount = (toDoItems) => {
+    let itemCount = 0;
+    toDoItems.forEach((item) => {
+      if (!item.isComplete) itemCount++
+    })
+    return itemCount
+  }
+
   return (
     <div className="toDoMainContainer">
       <div className="toDoLeft">
         <div className="toDoHeaderContainer displayFlex spaceBetween">
           <h1 className="toDoHeaderItem">To Do</h1>
-          <h1 className="toDoCount toDoHeaderItem">{toDoItems.length}</h1>
+          <h1 className="toDoCount toDoHeaderItem">{getItemCount(toDoItems)}</h1>
         </div>
         <div>
           {toDoItems.length > 0 &&

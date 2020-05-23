@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import TimePicker from 'react-time-picker';
+import React, { useState } from 'react';
 
-import '../../shared/styles/sharedStyles.css'
 import '../styles/AddEvent.css'
 
-const AddEvent = (props) => {
+const EditEvent = (props) => {
 
   const [eventFormState, setEventState] = 
     useState({
@@ -12,13 +10,9 @@ const AddEvent = (props) => {
       title: '',
       description: '',
       date: null,
-      startTime: '10:00',
-      endTime: '11:00'
+      startTime: '10_00_AM',
+      endTime: '11_00_AM'
     })
-
-  useEffect(() => {
-    console.log("EFS: ", eventFormState)
-  }, [eventFormState])
 
   const handleSubmit = (event) => {
     console.log('Title: ', eventFormState.title);
@@ -32,14 +26,6 @@ const AddEvent = (props) => {
     setEventState({ ...eventFormState, [name]: value })
   }
 
-  const onStartTimeChange = (time) => {
-    setEventState({ ...eventFormState, ['startTime']: time })
-  }
-
-  const onEndTimeChange = (time) => {
-    setEventState({ ...eventFormState, ['endTime']: time })
-  }
-
   const handleCancelClick = () => {
     console.log("Cancel")
   }
@@ -47,22 +33,6 @@ const AddEvent = (props) => {
   return (
     <div className="addEventMainContainer">
      <form onSubmit={handleSubmit} autoComplete="off">
-       <div className="displayFlex spaceAround">
-          <TimePicker
-            clearIcon={null}
-            required
-            disableClock
-            onChange={onStartTimeChange}
-            value={eventFormState.startTime}
-          />
-          <TimePicker
-            clearIcon={null}
-            required
-            disableClock
-            onChange={onEndTimeChange}
-            value={eventFormState.endTime}
-          />
-       </div>
         <label>
           <input
             className="addEventInput eventTitle"
@@ -94,4 +64,4 @@ const AddEvent = (props) => {
   )
 }
 
-export default AddEvent;
+export default EditEvent;
