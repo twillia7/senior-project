@@ -1,23 +1,28 @@
 import React, { useState, useReducer } from 'react';
+
 import ToDoList from '../components/ToDoList'
 import ToDoNew from '../components/ToDoNew'
 import ToDoEdit from '../components/ToDoEdit'
+
 import '../../shared/styles/sharedStyles.css'
 import '../styles/ToDoPage.css'
 
 const ToDoPage = () => {
   const toDoItemsData = [
-    { id: 'todo_1', 
+    { id: 'todo_1',
+      uid: 'u1', 
       title: 'Mail Letter', 
       notes: 'Make sure to take it to the post office before 2:00 P.M.', 
       isComplete: true
     },
     { id: 'todo_2', 
+      uid: 'u1', 
       title: 'Finish Essay', 
       notes: 'Topic: Biology', 
       isComplete: false
     },
     { id: 'todo_67', 
+      uid: 'u1', 
       title: 'Lunch With Jim', 
       notes: 'Meet at Cafeteria', 
       isComplete: false
@@ -29,8 +34,11 @@ const ToDoPage = () => {
   const [ currentItem, setCurrentItem ] = useState(initialFormState)
   const [ editing, setEditing ] = useState(false)
 
+  /* CRUD Functions */
   const addItem = item => {
-    item.id = `todo_${(parseInt((toDoItems[toDoItems.length - 1].id).replace('todo_', '')) + 1)}`;
+    if (toDoItems.length === 0) item.id = 'todo_1';
+    else item.id = `todo_${(parseInt((toDoItems[toDoItems.length - 1].id).replace('todo_', '')) + 1)}`;
+    item.uid = 'u1';
     setToDoItems([...toDoItems, item])
   }
 
@@ -94,7 +102,6 @@ const ToDoPage = () => {
           <>
             <h2>Edit Item</h2>
             <ToDoEdit 
-              editing={editing}
               setEditing={setEditing}
               currentItem={currentItem}
               updateItem={updateItem}

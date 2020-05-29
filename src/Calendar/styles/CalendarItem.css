@@ -1,0 +1,15 @@
+.calendarItemBody {
+  border-bottom: 1px solid gray;
+  padding: 10px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.calendarItemTitle {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.calendarItemDescription {
+  color: #4A4A4A;
+}

@@ -15,5 +15,9 @@
 }
 
 .toDoItemNotes {
-  color: #4A4A4A;
+  color: rgb(59, 59, 59);
+}
+
+.calendarItemTimes {
+  font-style: italic;
 }

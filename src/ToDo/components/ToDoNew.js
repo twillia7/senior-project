@@ -3,7 +3,7 @@ import '../styles/ToDoNew.css'
 
 const ToDoNew = (props) => {
   const { addItem } = props
-  const initialFormState = { id: null, title: '', notes: '', isComplete: false }
+  const initialFormState = { id: null, uid: null, title: '', notes: '', isComplete: false }
   const [ item, setItem ] = useState(initialFormState)
 
   const handleInputChange = event => {

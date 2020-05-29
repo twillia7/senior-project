@@ -5,25 +5,22 @@ import '../../shared/styles/sharedStyles.css'
 import '../styles/AddEvent.css'
 
 const AddEvent = (props) => {
+  const { calendarDate, addEvent } = props;
 
-  const [eventFormState, setEventState] = 
-    useState({
-      id: '',
-      title: '',
-      description: '',
-      date: null,
-      startTime: '10:00',
-      endTime: '11:00'
-    })
+  const initialFormState = { 
+    id: '', 
+    uid: '',
+    title: '', 
+    description: '', 
+    startTime: new Date(Date.parse(`2020-01-01T12:00:00`)),
+    endTime: new Date(Date.parse(`2020-01-01T13:00:00`)) 
+  }
 
-  useEffect(() => {
-    console.log("EFS: ", eventFormState)
-  }, [eventFormState])
+  const [eventFormState, setEventState] = useState(initialFormState)
 
   const handleSubmit = (event) => {
-    console.log('Title: ', eventFormState.title);
-    console.log('Description: ', eventFormState.description);
     event.preventDefault();
+    addEvent(eventFormState, calendarDate);
   }
 
   const handleInputChange = (event) => {
@@ -33,15 +30,22 @@ const AddEvent = (props) => {
   }
 
   const onStartTimeChange = (time) => {
-    setEventState({ ...eventFormState, ['startTime']: time })
+    setEventState({ ...eventFormState, startTime: new Date(Date.parse(`2020-05-27T${time}:00`)) })
   }
 
   const onEndTimeChange = (time) => {
-    setEventState({ ...eventFormState, ['endTime']: time })
+    setEventState({ ...eventFormState, endTime: new Date(Date.parse(`2020-05-27T${time}:00`)) })
+  }
+
+  const getTimeFromDate = (timeObject) => {
+    if (timeObject.getMinutes() < 10) {
+      return `${timeObject.getHours()}:0${timeObject.getMinutes()}`
+    }
+    return `${timeObject.getHours()}:${timeObject.getMinutes()}`
   }
 
   const handleCancelClick = () => {
-    console.log("Cancel")
+    setEventState({...initialFormState})
   }
  
   return (
@@ -53,14 +57,14 @@ const AddEvent = (props) => {
             required
             disableClock
             onChange={onStartTimeChange}
-            value={eventFormState.startTime}
+            value={getTimeFromDate(eventFormState.startTime)}
           />
           <TimePicker
             clearIcon={null}
             required
             disableClock
             onChange={onEndTimeChange}
-            value={eventFormState.endTime}
+            value={getTimeFromDate(eventFormState.endTime)}
           />
        </div>
         <label>
