@@ -1,0 +1,59 @@
+.noteForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.noteHeader {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.noteButton {
+  width: 200px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: white;
+  color: black;
+  border: 1px solid gray;
+  border-radius: 8px;
+  text-decoration: none;
+  margin: 5px;
+}
+.noteButton:active {
+  background-image: linear-gradient(0deg, #006aff, #679DF2);
+  color: white;
+}
+.noteButton:focus {
+  outline: none;
+}
+
+.noteButtonContainer {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.createNoteTitle {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid gray;
+  outline: none;
+  margin: 10px 0;
+  font-weight: bold;
+  font-size: 24px;
+  max-width: 50%;
+}
+
+.createNoteBody {
+  height: 100%;
+  border: none;
+}
+.createNoteBody:focus {
+  outline: none;
+}

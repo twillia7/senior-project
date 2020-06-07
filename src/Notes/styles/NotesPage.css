@@ -1,0 +1,16 @@
+.notesPage {
+  height: 100%;
+  display: flex;
+  align-items: stretch;
+}
+.notesList {
+  height: 100%;
+  width: 350px;
+  border-right: rgb(168, 168, 168) 1px solid;
+  overflow: scroll;
+}
+
+.noteBody {
+  height: 100%;
+  width: 100%;
+}

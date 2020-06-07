@@ -7,7 +7,7 @@
 }
 
 main {
-  height: 100%;
+  height: calc(100% - 50px);
 }
 
 /* Page should fill the entire height of the window */
